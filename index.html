@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assests/faviconlogo.jpg" type="image/x-icon">
+    <title>News & Weather Hub</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-query.css">
+    <link rel="stylesheet" href="weather.css">
+    <link rel="stylesheet" href="clock.css">
+</head>
+<body>
+    <nav>
+        <div class="main-nav  flex">
+            <a href="#" onclick="window.location.reload()" class="company-logo flex" >
+                <img src="assests/Nishantnewslogo.png" alt="Company Logo">
+            </a>
+            <div class="Nav-design">
+                <div class="search-container">
+            <div class="search-bar flex"> 
+                <button id="search-button" class="fa-solid fa-magnifying-glass"></button>
+                <input id="search-text"  type="text" class="news-input" placeholder="Search for Topic, Names & Sources">
+            </div>
+        </div>
+            <div class="nav-links flex">
+                <ul class="flex">
+                    <li class="hover-link nav-item" id="Home" onclick=" window.location.reload()" >Home</li>
+                    <li class="hover-link nav-item" id="Latest" onclick="onNavItemClick('Latest')">Latest</li>
+                    <li class="hover-link nav-item" id="India" onclick="onNavItemClick('India')">India</li>
+                    <li class="hover-link nav-item" id="World" onclick="onNavItemClick('World')">World</li>
+                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">Cricket</li>
+                    <li class="hover-link nav-item" id="finance"  onclick="onNavItemClick('finance')">Finance</li>
+                    <li class="hover-link nav-item" id="education"  onclick="onNavItemClick('education')">Education</li>
+
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')" >Politics</li>
+                    <li class="hover-link nav-item" id="entertainment" onclick="onNavItemClick('entertainment')"> Entertainment</li>
+                    <li class="hover-link nav-item" id="science" onclick="onNavItemClick('science')"> Science</li>
+                    <li class="hover-link nav-item" id="health" onclick="onNavItemClick('health')"> Health</li>
+                    <li class="hover-link nav-item" id="sports" onclick="onNavItemClick('sports')"> Sports</li>
+                    <li class="hover-link nav-item" id="technology" onclick="onNavItemClick('technology')"> Technology</li>
+                </ul>
+            </div>
+
+
+            
+        </div>
+        </div> 
+    </nav>
+
+    <main>
+        <div class="timeweather-container">
+        <div class="time-container flex">
+            <div class="timeanddate">
+                <h3>News & Weather Updates</h3>
+                <div class="dayanddate-container">
+            <p id="dateday"> </p>
+            <p>,</p>
+            <p id="timedate">  </p>
+        </div>
+            </div>
+        </div>
+        
+
+        
+        <div class="weather-container flex">
+            <div class="weather-boxcontainer">
+                <!-- <div class="header"> -->
+                    <div class="Search-weather-body">
+                    <div class="search-box">
+                        
+                        <input id="search-weather" type="text"  class="input-box" placeholder="Enter Your Location">
+                        <button class="fa-solid fa-magnifying-glass" id="search-Btn" ></button>
+
+                    </div>
+                    
+                
+                     <div class="location-not-found">
+                        <h1>Sorry, Location Not Found!!! </h1>
+                        <img  src="Weather Assests/404.png" alt="404 Error">
+                     </div>
+
+            
+                     
+                <div class="weather-body">
+                   <img src="WeatherAssests/cloud.png" alt="cloud">
+                   <div class="weather_box">
+                    <p class="temperature">0 <sup>°C</sup></p>
+                    <p class="description"> Light Rain</p>
+                   </div>
+            
+                   <div class="weather-details">
+                    <div class="humidity">
+                        <i class="fa-solid fa-droplet"></i>
+            <div class="text">
+                <span id="humidity">5%</span>
+                <p>Humidity</p>
+            </div>
+            </div>
+            <div class="wind">
+                <i class="fa-solid fa-wind"></i>
+            <div class="text">
+            <span id="wind-speed">12km/hr</span>
+            <p>Wind Speed</p>
+            </div>
+                    </div>
+                   
+                </div>
+               </div> 
+            
+            </div>
+              </div>
+        </div>
+    </div>
+
+
+    <div class="clock-container">
+        <div class="time-container">
+            <div class="clock">
+    
+                
+    
+                <div class="dot">•</div>
+            
+              <div  style="--clr: #ff3d58; --h:38px;" id="hour"  class="hand"><i></i></div>
+              <div style="--clr:#00a6ff;  --h:46px;" id="min" class="hand"><i></i></div>
+              <div  style="--clr:#000000; --h:42px;" id="sec" class="hand"><i></i></div>
+    
+             
+                <span style = "--i:1;"><b>1</b></span>
+                <span style = "--i:2;"><b>2</b></span>
+                <span style = "--i:3;"><b>3</b></span>
+                <span style = "--i:4;"><b>4</b></span>
+                <span style = "--i:5;"><b>5</b></span>
+                <span style = "--i:6;"><b>6</b></span>
+                <span style = "--i:7;"><b>7</b></span>
+                <span style = "--i:8;"><b>8</b></span>
+                <span style = "--i:9;"><b>9</b></span>
+                <span style = "--i:10;"><b>10</b></span>
+                <span style = "--i:11;"><b>11</b></span>
+                <span style = "--i:12;"><b>12</b></span>
+    
+            </div>
+        </div>
+
+        </div>
+     <div class="cards-container container flex" id="cards-container">
+        
+     </div>
+    </main>
+
+        <template id="template-news-card">
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/400x200" alt="News Image" id="news-img">
+                </div>
+                <div class="card-content">
+                    <h3 id="news-title"> This is the title</h3>
+                    <h6 class="news-source" id="news-source"> Nishant tyagi 17/03/2003</h6>
+                    <p class="news-desc" id="news-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro corporis voluptates illo ipsam ab fuga perspiciatis modi distinctio dolores ad?</p>
+                </div>
+            </div>
+        </template>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+        
+        <script src="https://kit.fontawesome.com/171dc8d524.js" crossorigin="anonymous"></script>
+        <script src="clock.js"></script>
+        <script src="climate.js"></script>
+    <script src="script.js"></script>
+   
+</body>
+</html>
